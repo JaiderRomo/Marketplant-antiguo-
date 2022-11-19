@@ -1,14 +1,12 @@
 @extends('layouts.app')
-<br>
-<br>
-<br>
+
 
 @section('title', 'Register')
 
 @section('content')
 
 
-@endsection
+
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <header>
 
@@ -76,6 +74,15 @@
               <p class="border border-red-500 rounded-md bg-red-100 w-full
               text-red-600 p-2 my-2">* {{ $message }}</p>
             @enderror
+         
+            <input type="telefono" class="border border-gray-200 rounded-md bg-gray-200 w-full
+            text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Telefono"
+            id="telefono" name="telefono">
+        
+            @error('telefono')        
+              <p class="border border-red-500 rounded-md bg-red-100 w-full
+              text-red-600 p-2 my-2">* {{ $message }}</p>
+            @enderror
         
             <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full
             text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña"
@@ -109,5 +116,5 @@
     </div>
   </div>
 </header>
-
+@endsection
 <!-- Page section example for content below the video header -->

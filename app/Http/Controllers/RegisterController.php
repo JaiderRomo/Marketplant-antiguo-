@@ -24,6 +24,7 @@ class RegisterController extends Controller
         $user->tipo_identificacion_id = $request->tipo_identificacion_id;
         $user->identificacion = $request->identificacion;
         $user->email = $request->email;
+        $user->telefono = $request->telefono;
         $user->password = $request->password;
 
         $user->save();

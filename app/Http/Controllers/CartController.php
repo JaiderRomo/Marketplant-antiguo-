@@ -9,7 +9,7 @@ class CartController extends Controller
 {
     public function shop()
     {
-        $blog= Blog::paginate(8);
+        $blog= Blog::paginate(4);
         $products = Product::paginate(8);
       // dd($products);
         return view('shop')->withTitle('MarketPlant | SHOP')->with(['products' => $products,'blog'=>$blog]);

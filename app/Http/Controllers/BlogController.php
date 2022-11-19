@@ -50,26 +50,10 @@ class BlogController extends Controller
          $request->file('imagen_blog')->storeAs('public/images', $nombreArchivo );
          $temp = $blog->create(['titulo'=>$request->titulo,'descripcion'=>$request->descripcion, 'user_id'=>$usuario])->images()->create(['url'=>$nombreArchivo]);
         
-          //   $blog->imagen_blog = $nombreArchivo;
-        //    $blog->descripcion = $request->descripcion;
+   
         
            return redirect()->route('blog.index');
-    //    $blog  = new Blog();
-    //    $User = user::all();
-    //    foreach ($User as $user)
-    //    if (auth()->user()->id==$user->id) {
-    //    $blog->user_id= $user->id;
-    //   };
-      
-    //   $file=$request->file("imagen_blog");
-    //   $nombreArchivo = "img_".time().".".$file->guessExtension();
-    //   $request->file('imagen_blog')->storeAs('public/blogs', $nombreArchivo );
-    //   $blog->imagen_blog = $nombreArchivo;
-
-    //    $blog->titulo = $request->titulo;
-    //    $blog->descripcion = $request->descripcion;
-    //    $blog->save();
-    //    return redirect()->route('blog.index');
+  
     }
 
     /**

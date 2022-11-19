@@ -1,9 +1,5 @@
 @extends('layouts.app')
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <div class="text-dark text-center  h3">HERRAMIENTAS</div>
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <div id="cards_landscape_wrap-2">

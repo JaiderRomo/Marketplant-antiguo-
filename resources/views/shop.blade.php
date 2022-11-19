@@ -206,7 +206,7 @@
                                                 <input type="hidden" value="1" id="quantity" name="quantity">
 
                                                 <div class="text-container">
-                                                    <h6><a href="{{ route('plantasmedicinales.show', $pro->id) }}">
+                                                    <h6><a href="{{ route('product.show', $pro->id) }}">
                                                             <h6 class="card-title">{{ $pro->nombre }}
                                                         </a></h6>
                                                     <h4>Precio: ${{ $pro->precio }}</h4>
@@ -229,53 +229,45 @@
 
 
 
-                <div class="container my-5">
-                    <hr>
-                    <div class="border-bottom pb-3 px-2 d-flex justify-content-between">
-                        <div class="d-flex align-items-center">
-
-                            <a href="{{ route('blog.create') }}" style="color: #9B5DE5; font-size: 20px;"
-                                class="text-capitalize font-weight-bold mb-0">Nuevo Blog</a>
-                        </div>
-                        <a href="{{ route('blog.index') }}" class="text-dark">VER TODO</a>
-                    </div>
-                    <div id="cards_landscape_wrap-2">
-                        <div class="container ">
-                            <div class="row">
-                                @foreach ($blog as $blogs)
-                            
-                                @foreach ($blogs->images as $image)
+ <div class="container my-5">
+           <hr>
+ <div class="border-bottom pb-3 px-2 d-flex justify-content-between">
+  <div class="d-flex align-items-center">
+    <a href="{{ route('blog.create') }}" style="color: #9B5DE5; font-size: 20px;"       class="text-capitalize font-weight-bold mb-0">Nuevo Blog</a>
+      </div>
+      <a href="{{ route('blog.index') }}" class="text-dark">VER TODO</a>
+        </div>
+          <div id="cards_landscape_wrap-2">
+              <div class="container ">
+                 <div class="row">
+                  @foreach ($blog as $blogs)
+                      @foreach ($blogs->images as $image)
                          <a href="{{ route('blog.show', $blogs->id) }}">
                            <div class="card-flyer col-3">
                                <div class="text-box">
                                    <div class="image-box">
                                        <img src="{{ 'http://localhost/marketplant/public/storage/images/' . $image->url }}"
                                            alt="" />
-                                   </div>
+                                          </div>
                                        <div class="text-container">
-                                           <h6><a href="{{ route('blog.show', $blogs->id) }}">
-                                                   <h6 class="card-title">{{ $blogs->titulo }}
-                                               </a></h6>
-                                         <br>
-                                          <a class="btn btn-primary"  href="{{ route('blog.show', $blogs->id) }}" role="button">Ver Mas</a>
-                                       </div>
-                                  
+                                       <h6><a href="{{ route('blog.show', $blogs->id) }}">
+                                       <h6 class="card-title">{{ $blogs->titulo }}
+                                       </a></h6>
+                                       <br>
+                                    <a class="btn btn-primary"  href="{{ route('blog.show', $blogs->id) }}" role="button">Ver Mas</a>
+                                 </div>    
                                </div>
-                           </div>
-                         </a>
-                           @endforeach 
-                                    
-                           @endforeach  
-                      </div>
-                      </div>
-                      </div>
-                </div>
-
-
-            </div>
+                             </div>
+                           </a>
+                           @endforeach              
+                    @endforeach  
+                 </div>
+               </div>
+              </div>
+             </div>
+          </div>
         </div>
-    </div>
-
-    </div>
+      </div>
+     </div>
     </div>
 @endsection

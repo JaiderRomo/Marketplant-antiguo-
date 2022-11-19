@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-  <br>
+@section('title', 'Productos')
+
+@section('content')
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -69,7 +72,7 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
                     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                     <script src="{{asset ('js/script.js')}}" ></script>
-                    <button onclick="swal4()" type="submit" class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Guardar</button>
+                    <button type="submit" class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Guardar</button>
                 </div>
             </form> 
 
@@ -91,3 +94,4 @@
         });
     });
 </script>
+@endsection

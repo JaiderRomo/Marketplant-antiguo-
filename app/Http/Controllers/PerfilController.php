@@ -15,11 +15,10 @@ class PerfilController extends Controller
      */
     public function index(Request $request)
     {
-        $buscarpor = $request->get('buscarpor');
+       
         // $blogs = Blog::all();
-        // $producto = Product::all();
-        $producto = Product::where('nombre','LIKE','%',$buscarpor.'%');
-        return view('perfil_us.index')->withTitle('MarketPlant | PERFIL')->with(['producto' => $producto,'busqueda'=>$buscarpor]);
+         $productos = Product::all();
+        return view('perfil_us.index')->withTitle('MarketPlant | PERFIL')->with(['productos' => $productos]);
     }
 
     /**
@@ -83,10 +82,16 @@ class PerfilController extends Controller
     $product->nombre =$request->nombre;
     $product->descripcion= $request->descripcion;
 
-    $file=$request->file("imagen");
-    $nombreArchivo = "img_".time().".".$file->guessExtension();
+    // $file=$request->file("imagen");
+    // $nombreArchivo = "img_".time().".".$file->guessExtension();
+    // $request->file('imagen')->storeAs('public/productos', $nombreArchivo );
+    // $product->imagen = $nombreArchivo;
+
+if ($request->imagen !='')
+{
+    $nombreArchivo =rand().'.'.$product->imagen->getClientOriginalExtension();
     $request->file('imagen')->storeAs('public/productos', $nombreArchivo );
-    $product->imagen = $nombreArchivo;
+}
 
     $product->cantidad= $request->cantidad;
     $product-> precio= $request-> precio;
